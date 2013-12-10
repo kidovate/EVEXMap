@@ -1,0 +1,21 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "tinycolor": {},
+      "jquery.autocomplete": {}
+    },
+    "packages": {
+      "tinycolor": {
+        "git": "https://github.com/kidovate/meteor-tinycolor.git",
+        "tag": "v0.9.17",
+        "commit": "3895f74e7841027f88f87e134e6400378f6f5b34"
+      },
+      "jquery.autocomplete": {
+        "git": "https://github.com/kidovate/meteor-jquery.autocomplete.git",
+        "tag": "v1.2.9",
+        "commit": "a0490281cd3fdc7196093350fa38f9180a4460f5"
+      }
+    }
+  }
+}

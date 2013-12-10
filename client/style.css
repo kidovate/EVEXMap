@@ -1,0 +1,43 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  overflow: hidden;
+}
+#map{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size:12px;
+}
+#map svg{
+  width: 100%;
+  height: 100%;
+}
+
+#map .link{
+  fill: none;
+  stroke:#666;
+  stroke-width: 1.5px;
+}
+
+#map .node circle
+{
+  fill:#ccc;
+  stroke:#fff;
+  stroke-width:1.5px;
+}
+
+#mapCtrl{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  margin: 0;
+
+}
+#mapCtrl #regionInput{
+  border-radius: 0 !important;
+  width: 100px;
+  margin-top: 6px;
+}
