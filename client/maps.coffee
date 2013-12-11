@@ -6,12 +6,14 @@ renderedMap = null
 width = null
 height = null
 regionList = null
+processRegionSelect = ->
+  region = $("#regionInput").val()
+  if !(region in regionList) or region is Session.get "mapRegion"
+    return
+  Session.set "mapRegion", region
+
 Template.mapControls.events
-    'keyup #regionInput': ->
-      region = $("#regionInput").val()
-      if !(region in regionList) or region is Session.get "mapRegion"
-        return
-      Session.set "mapRegion", region
+    'keyup #regionInput': processRegionSelect
 Meteor.startup ->
   regionList = @regions
   Session.set("mapRegion", "Cloud Ring") if !Session.get("mapRegion")?
@@ -19,6 +21,12 @@ Meteor.startup ->
   Template.mapControls.rendered = ->
     $("#regionInput").val(Session.get("mapRegion")).autocomplete
       lookup: regionList
+      lookupLimit: 5
+      appendTo: "#mapCtrlComp"
+      maxHeight: 95
+      autoSelectFirst: true
+      onSelect: processRegionSelect
+        
 
   Deps.autorun ->
     region =Session.get "mapRegion"
@@ -53,7 +61,7 @@ Meteor.startup ->
     force = d3.layout.force().size([width, height]).charge(-200).gravity(0.05).linkDistance(30)
     d3.json "/data/"+Session.get("mapRegion").replace(" ", "_")+".json", (error, graph) ->
       #console.log graph
-      svg.append("text").attr("x", (width / 2)).attr("y", '50px').style("font-weight", "bold").attr("text-anchor", "middle").style("font-size", "24px").text(Session.get("mapRegion"))
+      svg.append("text").attr("x", (width / 2)).attr("y", '50px').attr("text-anchor", "middle").style("font-family", "'Droid Sans', sans-serif").style("font-size", "24px").text(Session.get("mapRegion"))
       force.nodes(graph.systems).links(graph.jumps).start()
       link = nodeContainer.selectAll(".link").data(graph.jumps).enter().append("line").attr("class", "link").style("stroke-width", (d) ->
         Math.sqrt d.value

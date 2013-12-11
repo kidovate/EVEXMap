@@ -1,2 +1,13 @@
 <template name="topBar">
+  <div id="dragHint">
+    <i class="fa fa-exclamation"></i> drag points to re-arrange map
+  </div>
+  <div id="EVExDropCont">
+    <a data-toggle="dropdown" href="#">EVEx Apps</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="position: relative; left: -60px; top: 0;">
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="http://evefleet.herokuapp.com/" rel="tooltip" title="Realtime Fleet Command">EVEFleet</a>
+      </li>
+    </ul>
+  </div>
 </template>

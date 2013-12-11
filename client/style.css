@@ -41,3 +41,44 @@ body{
   width: 100px;
   margin-top: 6px;
 }
+
+#logoOverlay {
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 50px;
+  color: grey;
+  pointer-events: none;
+  font-family: 'Open Sans', serif;
+}
+#mapCtrlComp {
+  position: fixed;
+  bottom: 160px;
+  height: 0;
+  width: 0;
+}
+#dragHint{
+  opacity: 0.5;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 200px;
+  height: 20px;
+  color: grey;
+  pointer-events: none;
+  font-family: 'Open Sans', serif;
+  font-size: 13px;
+}
+#EVExDropCont{
+  opacity: 0.5;
+  position: fixed;
+  top: 12px;
+  right: 10px;
+  width: 100px;
+  height: 20px;
+  color: grey;
+  font-family: 'Open Sans', serif;
+  font-size: 15px;
+}

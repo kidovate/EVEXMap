@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "tinycolor": {},
-      "jquery.autocomplete": {}
+      "jquery.autocomplete": {},
+      "font-awesome": {}
     },
     "packages": {
       "tinycolor": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/kidovate/meteor-jquery.autocomplete.git",
         "tag": "v1.2.9",
         "commit": "a0490281cd3fdc7196093350fa38f9180a4460f5"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
       }
     }
   }

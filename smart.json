@@ -1,6 +1,7 @@
 {
   "packages": {
     "tinycolor": {},
-    "jquery.autocomplete": {}
+    "jquery.autocomplete": {},
+    "font-awesome": {}
   }
 }
