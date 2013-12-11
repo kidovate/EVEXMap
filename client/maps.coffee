@@ -66,6 +66,12 @@ Meteor.startup ->
       #console.log graph
       svg.append("text").attr("x", (width / 2)).attr("y", '50px').attr("text-anchor", "middle").style("font-family", "'Droid Sans', sans-serif").style("font-size", "24px").text(Session.get("mapRegion"))
       force.nodes(graph.systems).links(graph.jumps).start()
+      safety = 0
+      while(force.alpha() > 0.015)
+        force.tick()
+        if(safety++ > 1500)
+          break
+
       link = nodeContainer.selectAll(".link").data(graph.jumps).enter().append("line").attr("class", "link").style("stroke-width", (d) ->
         Math.sqrt d.value
       )
