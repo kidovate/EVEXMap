@@ -14,6 +14,9 @@ processRegionSelect = ->
 
 Template.mapControls.events
     'keyup #regionInput': processRegionSelect
+Template.topBar.rendered = ->
+  $("#EVExDropCont a[rel=tooltip]").tooltip
+    placement: 'left'
 Meteor.startup ->
   regionList = @regions
   Session.set("mapRegion", "Cloud Ring") if !Session.get("mapRegion")?
